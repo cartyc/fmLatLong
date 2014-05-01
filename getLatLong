@@ -1,0 +1,31 @@
+
+//Function input
+getLatLong( address; city, state)
+
+
+//Function Code
+
+Let (
+
+[
+//clear up address info for google and get XML response
+address = Substitute( address ; " " ; "+" ) & "+"  & "," & Substitute( city ; " " ; "+" ) & "," & state;
+GIS =  BE_GetURL("http://maps.google.com/maps/api/geocode/xml?address=" & address & "&sensor=false");
+
+//Parse XML for Lat/Long
+lat = Trim(BE_XPath( GIS ; "/GeocodeResponse/result /geometry/location/lat"));
+long = Trim(BE_XPath( GIS ; "/GeocodeResponse/result /geometry/location/lng"));
+postal = BE_XPath( GIS ; "/GeocodeResponse/result/address_component/long_name")
+
+]
+
+;
+
+//Return lat long and postal code
+
+lat & ¶ &
+long & ¶ &
+postal
+)
+
+)
