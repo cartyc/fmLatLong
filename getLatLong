@@ -1,6 +1,6 @@
 
 //Function input
-getLatLong( address; city, state)
+//getLatLong( address; city, state)
 
 
 //Function Code
@@ -26,6 +26,4 @@ postal = BE_XPath( GIS ; "/GeocodeResponse/result/address_component/long_name")
 lat & ¶ &
 long & ¶ &
 postal
-)
-
 )
