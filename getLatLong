@@ -21,9 +21,7 @@ postal = BE_XPath( GIS ; "/GeocodeResponse/result/address_component/long_name")
 
 ;
 
-//Return lat long and postal code
+//Return lat long JSON
 
-lat & ¶ &
-long & ¶ &
-postal
+"{ lat: " & lat & ", lng:" & long &"}"
 )
